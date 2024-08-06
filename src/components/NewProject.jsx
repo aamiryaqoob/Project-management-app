@@ -10,7 +10,7 @@ export default function NewProject() {
                 <li>
                     <button className="px-6 py-2 rounded-md bg-stone-800 text-stone-50 hover:bg-stone-950">Save</button>
                 </li>
-            </menu>
+            </menu> 
             <Input label="Title" />
             <Input label="Description" textarea />
             <Input label="Due Date" />
