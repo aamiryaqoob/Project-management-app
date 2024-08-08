@@ -32,7 +32,7 @@ function App() {
       };
     })
   }
-  console.log(projectSate)
+  
   let content;
   if (projectSate.projectSelectedID === undefined) {
     content = <NoProjectSelected onStartAddProject={handleAddProject} />
