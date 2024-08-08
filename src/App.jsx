@@ -7,16 +7,16 @@ function App() {
   const [projectSate, setprojectState] = useState({
     projectSelectedID: undefined,
     projects: []
-  })
+  });
 
   function handleAddProject() {
     setprojectState(prevState => {
       return {
         ...prevState,
         projectSelectedID: null
-      }
+      };
     })
-  }
+  };
 
   function handleAddnewProject(projectData) {
     setprojectState(prevState => {
