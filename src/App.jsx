@@ -10,6 +10,7 @@ function App() {
   });
 
   function handleAddProject() {
+
     setprojectState(prevState => {
       return {
         ...prevState,
@@ -42,9 +43,9 @@ function App() {
 
   return (
     <main className="h-screen my-8 flex gap-8">
-      <SideBar 
-      onStartAddProject={handleAddProject}
-      projects={projectSate.projects} />
+      <SideBar
+        onStartAddProject={handleAddProject}
+        projects={projectSate.projects} />
       {content}
     </main>
   );
