@@ -41,9 +41,7 @@ function App() {
     })
   }
 
-
   let content;
-
   if (projectState.selectedProject === null) {
     content = <NewProject onAdd={handleAddProject} onCancel={handleCancelProject} />
   } else if (projectState.selectedProject === undefined) {
