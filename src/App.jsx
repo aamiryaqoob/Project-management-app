@@ -7,8 +7,27 @@ import SelectedProjectDetails from "./components/SelectedProjectDetails";
 function App() {
   const [projectState, setProjectState] = useState({
     selectedProject: undefined,
-    projects: []
+    projects: [],
+    tasks: []
   });
+
+  function handleAddTask(text) {
+    setProjectState(prevState => {
+      const taskId = Math.random();
+      const newTask = {
+        text: text,
+        projectId: prevState.selectedProject,
+        id: taskId
+      };
+      return {
+        ...prevState,
+        tasks: [newTask, ...prevState.tasks]
+      }
+    })
+  }
+  function handleDeleteTask() {
+
+  }
 
   function handleSelectedProjectDetails(id) {
     setProjectState(prevState => {
@@ -63,7 +82,7 @@ function App() {
 
   const findSelectedProject = projectState.projects.find(project => project.id === projectState.selectedProject)
 
-  let content = <SelectedProjectDetails project={findSelectedProject} onDelete={handleDeleteProject} />;
+  let content = <SelectedProjectDetails project={findSelectedProject} onDelete={handleDeleteProject} onDeleteTask={handleDeleteTask} onAddTask={handleAddTask} tasks={projectState.tasks} />;
   if (projectState.selectedProject === null) {
     content = <NewProject onAdd={handleAddProject} onCancel={handleCancelProject} />
   } else if (projectState.selectedProject === undefined) {
